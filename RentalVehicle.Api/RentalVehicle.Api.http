@@ -1,0 +1,21 @@
+@RentalVehicle.Api_HostAddress = http://localhost:5050
+@AccessToken = REPLACE_WITH_JWT_ACCESS_TOKEN
+
+GET {{RentalVehicle.Api_HostAddress}}/health
+Accept: application/json
+
+###
+
+GET {{RentalVehicle.Api_HostAddress}}/api/vehicles
+Accept: application/json
+
+###
+
+GET {{RentalVehicle.Api_HostAddress}}/api/vehicles/1/availability?startDate=2026-08-01T00:00:00Z&endDate=2026-08-03T00:00:00Z
+Accept: application/json
+
+###
+
+GET {{RentalVehicle.Api_HostAddress}}/api/bookings/my
+Authorization: Bearer {{AccessToken}}
+Accept: application/json
